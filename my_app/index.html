@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermo-Tech Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #eef2f3; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .app-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 300px; text-align: center; }
+        h1 { color: #333; font-size: 24px; }
+        input { width: 100%; padding: 12px; margin: 20px 0; border: 2px solid #ddd; border-radius: 10px; font-size: 18px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        button:active { background-color: #0056b3; transform: scale(0.98); }
+        #result { margin-top: 20px; font-weight: bold; color: #28a745; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="app-card">
+        <h1>Thermo-Tech Pro</h1>
+        <input type="number" id="tempInput" placeholder="Enter Celsius">
+        <button onclick="convert()">Convert to Fahrenheit</button>
+        <div id="result">---</div>
+    </div>
+
+    <script>
+        function convert() {
+            let c = document.getElementById('tempInput').value;
+            if(c === "") { alert("Please enter a value"); return; }
+            let f = (c * 9/5) + 32;
+            // Using the .2f logic we discussed earlier!
+            document.getElementById('result').innerText = f.toFixed(2) + " °F";
+        }
+    </script>
+</body>
+</html>
+
